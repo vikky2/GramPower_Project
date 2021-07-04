@@ -6,19 +6,20 @@ from selenium.webdriver.support.select import Select
 driver=webdriver.Chrome()
 driver.implicitly_wait(10)
 driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account") # Navigating to the signup url
-Sign_up=driver.find_element_by_xpath("//a[contains(text(),'Sign in')]")
+Sign_up=driver.find_element_by_xpath("//a[contains(text(),'Sign in')]")  # moving forward to get the sign-up page
 Sign_up.click()
 
 driver.execute_script("window.scrollTo(0, 300)")    # Scroll down page
 
-E_mail=driver.find_element_by_id("email_create")
-E_mail.send_keys("vikky.ranjan2@gmail.com")
-Create_Account=driver.find_element_by_xpath("//button[@id='SubmitCreate']")
+E_mail=driver.find_element_by_id("email_create")     # Creating an account with email
+time.sleep(1)
+E_mail.send_keys("vikky.ranjan2@gmail.com")   # Entering the text field with mail
+Create_Account=driver.find_element_by_xpath("//button[@id='SubmitCreate']")  # Processing for to click on the button
 Create_Account.click()
 
 driver.execute_script("window.scrollTo(0, 50)")
 
-
+# Here, entering all the essential details for creating a new account on this webpage
 title=driver.find_element_by_id("id_gender1")
 title.click()
 
@@ -67,4 +68,4 @@ address_alias=driver.find_element_by_id("alias").send_keys("MY Address")
 
 register=driver.find_element_by_id("submitAccount").click()
 
-#driver.close()
+driver.close()
