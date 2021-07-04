@@ -5,11 +5,11 @@ from selenium.webdriver.support.select import Select
 
 driver=webdriver.Chrome()
 driver.implicitly_wait(10)
-driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account")
+driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account") # Navigating to the signup url
 Sign_up=driver.find_element_by_xpath("//a[contains(text(),'Sign in')]")
 Sign_up.click()
 
-driver.execute_script("window.scrollTo(0, 300)")
+driver.execute_script("window.scrollTo(0, 300)")    # Scroll down page
 
 E_mail=driver.find_element_by_id("email_create")
 E_mail.send_keys("vikky.ranjan2@gmail.com")
